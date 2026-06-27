@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.R.V.I.S - AI Assistant Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="top-left">
+                <div class="logo">
+                    <span class="logo-text">J.A.R.V.I.S</span>
+                    <div class="status-indicator online"></div>
+                </div>
+            </div>
+            <div class="top-center">
+                <div class="clock" id="clock">
+                    <div class="time" id="time">00:00:00</div>
+                    <div class="date" id="date">Loading...</div>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="weather-widget">
+                    <div class="weather-icon">☁️</div>
+                    <div class="weather-info">
+                        <div class="temperature">25.2°C</div>
+                        <div class="location">Queens City</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <!-- System Stats -->
+                <div class="panel system-stats">
+                    <h3 class="panel-title">SYSTEM STATS</h3>
+                    <div class="stat-item">
+                        <div class="stat-label">CPU</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="cpu-bar" style="width: 45%"></div>
+                        </div>
+                        <div class="stat-value" id="cpu-value">45%</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">RAM</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="ram-bar" style="width: 62%"></div>
+                        </div>
+                        <div class="stat-value" id="ram-value">62%</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">DISK</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="disk-bar" style="width: 38%"></div>
+                        </div>
+                        <div class="stat-value" id="disk-value">38%</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">NETWORK</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" id="network-bar" style="width: 23%"></div>
+                        </div>
+                        <div class="stat-value" id="network-value">23%</div>
+                    </div>
+                </div>
+
+                <!-- Weather Card -->
+                <div class="panel weather-card">
+                    <h3 class="panel-title">WEATHER</h3>
+                    <div class="weather-location-input">
+                        <input type="text" id="location-input" placeholder="Enter city name...">
+                        <button id="location-btn">🔍</button>
+                    </div>
+                    <div class="weather-main">
+                        <div class="weather-large-icon">☁️</div>
+                        <div class="weather-temp" id="weather-temp">25.2°C</div>
+                        <div class="weather-condition" id="weather-condition">Cloudy</div>
+                        <div class="weather-location" id="weather-location">Queens City</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span class="detail-label">Humidity</span>
+                            <span class="detail-value" id="weather-humidity">65%</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="detail-label">Wind</span>
+                            <span class="detail-value" id="weather-wind">12 km/h</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="detail-label">Feels Like</span>
+                            <span class="detail-value" id="weather-feels">26°C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camera Panel -->
+                <div class="panel camera-panel">
+                    <h3 class="panel-title">CAMERA</h3>
+                    <div class="camera-status">
+                        <div class="status-dot offline"></div>
+                        <span class="status-text">Camera OFF</span>
+                    </div>
+                    <div class="camera-preview">
+                        <div class="preview-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                            <span>No Signal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Uptime -->
+                <div class="panel uptime-panel">
+                    <h3 class="panel-title">SYSTEM UPTIME</h3>
+                    <div class="uptime-display">
+                        <div class="uptime-value" id="uptime">00:00:00</div>
+                        <div class="uptime-label">Running Time</div>
+                    </div>
+                    <div class="uptime-stats">
+                        <div class="uptime-stat">
+                            <span class="stat-number" id="sessions">1</span>
+                            <span class="stat-label">Sessions</span>
+                        </div>
+                        <div class="uptime-stat">
+                            <span class="stat-number" id="commands">0</span>
+                            <span class="stat-label">Commands</span>
+                        </div>
+                        <div class="uptime-stat">
+                            <span class="stat-number" id="activity">Active</span>
+                            <span class="stat-label">Status</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Section -->
+            <div class="center-section">
+                <div class="ai-core-container">
+                    <div class="ai-core">
+                        <div class="core-ring ring-1"></div>
+                        <div class="core-ring ring-2"></div>
+                        <div class="core-ring ring-3"></div>
+                        <div class="core-ring ring-4"></div>
+                        <div class="core-center"></div>
+                    </div>
+                </div>
+                <div class="assistant-info">
+                    <h2 class="assistant-name">J.A.R.V.I.S</h2>
+                    <p class="assistant-status" id="assistant-status">Listening for wake words...</p>
+                </div>
+                <div class="control-buttons">
+                    <button class="control-btn camera-btn" id="camera-btn" title="Camera">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                    </button>
+                    <button class="control-btn mic-btn" id="mic-btn" title="Microphone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </button>
+                    <button class="control-btn keyboard-btn" id="keyboard-btn" title="Keyboard">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <line x1="6" y1="8" x2="6" y2="8"></line>
+                            <line x1="10" y1="8" x2="10" y2="8"></line>
+                            <line x1="14" y1="8" x2="14" y2="8"></line>
+                            <line x1="18" y1="8" x2="18" y2="8"></line>
+                            <line x1="6" y1="12" x2="6" y2="12"></line>
+                            <line x1="10" y1="12" x2="10" y2="12"></line>
+                            <line x1="14" y1="12" x2="14" y2="12"></line>
+                            <line x1="18" y1="12" x2="18" y2="12"></line>
+                            <line x1="8" y1="16" x2="16" y2="16"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="right-panel">
+                <div class="panel conversation-panel">
+                    <div class="conversation-header">
+                        <h3 class="panel-title">CONVERSATION</h3>
+                        <div class="conversation-actions">
+                            <button class="action-btn" id="clear-chat" title="Clear Chat">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                            <button class="action-btn" id="export-chat" title="Export Conversation">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="conversation-messages" id="conversation-messages">
+                        <div class="message ai-message">
+                            <div class="message-avatar">AI</div>
+                            <div class="message-content">
+                                <p>Hello, I am JARVIS, JARVIS is back online. Some features may be limited. How can I assist you today?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation-input">
+                        <input type="text" id="message-input" placeholder="Type your message...">
+                        <button class="send-btn" id="send-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

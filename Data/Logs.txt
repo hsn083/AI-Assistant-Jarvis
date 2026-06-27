@@ -1,0 +1,31 @@
+[2026-06-25 11:37:53] User Speech: ہیلو جا رہے ہو
+[2026-06-25 11:37:53] Confidence: 0.56
+[2026-06-25 11:37:53] Detected Language: ur
+[2026-06-25 11:37:53] Low confidence (0.56) — asking confirmation: کیا آپ نے یہ کہا تھا: ہیلو جا رہے ہو؟
+[2026-06-25 11:37:53] [Model] Classifying: __CONFIRM__:ہیلو جا رہے ہو
+[2026-06-25 11:37:55] [Model] Classification result: ['general']
+[2026-06-25 11:38:08] User Speech: ہیلو چار
+[2026-06-25 11:38:08] Confidence: 0.87
+[2026-06-25 11:38:08] Detected Language: ur
+[2026-06-25 11:38:08] Final Query Sent To AI: ہیلو چار.
+[2026-06-25 11:38:08] [Model] Classifying: ہیلو چار.
+[2026-06-25 11:38:09] [Model] Classification result: ['general ہیلو چار.']
+[2026-06-25 11:38:09] [Chatbot] User Query: ہیلو چار.
+[2026-06-25 11:38:09] [Chatbot] Assistant Response: ہیلو بوس، کیسے ہو؟ آج کا دن کیسا گزر رہا ہے؟
+[2026-06-25 11:38:32] SpeechRecognition: timeout, no speech detected
+[2026-06-25 11:38:32] [Model] Classifying: hlo
+[2026-06-25 11:38:33] [Model] Classification result: ['general hlo']
+[2026-06-25 11:38:33] [Chatbot] User Query: Hlo.
+[2026-06-25 11:38:33] [Chatbot] Assistant Response: ہیلو بوس، ابھی کچھ دیر پہلے ہی بات ہوئی تھی، کیا کوئی خاص بات ہے جس پر بات کرنا چاہتے ہیں؟
+[2026-06-25 11:39:02] [Model] Classifying: ni
+[2026-06-25 11:39:03] [Model] Classification result: ['general ni']
+[2026-06-25 11:39:03] [Chatbot] User Query: Ni.
+[2026-06-25 11:39:03] [Chatbot] Assistant Response: تو پھر بس آئیے کچھ عام گپ شپ کرتے ہیں، کیا آج کے دن میں کچھ نئی چیز دیکھی یا سنی ہے؟
+[2026-06-25 11:39:18] [Model] Classifying: ni tum ny??
+[2026-06-25 11:39:19] [Model] Classification result: ['general ni tum ny??']
+[2026-06-25 11:39:19] [Chatbot] User Query: Ni tum ny?.
+[2026-06-25 11:39:20] [Chatbot] Assistant Response: نہیں، مجھے تو بس آپ سے بات کرنے کا موقع ملتا ہے، ورنہ میرا کام تو بس آپ کی مدد کرنا ہے، لیکن آج کا دن بہت اچھا گزر رہا ہ...
+[2026-06-25 11:39:37] [Model] Classifying: acha close
+[2026-06-25 11:39:37] [Model] Classification result: ['exit']
+[2026-06-25 11:39:37] [Chatbot] User Query: Okay, bye!
+[2026-06-25 11:39:39] [Chatbot] Assistant Response: اللہ حافظ، بوس! آپ کو بھی اچھا دن گزرے۔
