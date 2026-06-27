@@ -148,22 +148,126 @@ npm install
 
 # 🔑 Environment Variables Setup
 
-Create a file:
+This project uses environment variables to store private API keys and configuration settings securely.
+
+## Step 1: Create Environment File
+
+Create a new file in the project root directory:
 
 ```
 .env
 ```
 
-Add your API keys:
+---
 
-```env
-AI_API_KEY=your_api_key_here
+## Step 2: Add Configuration
 
-HUGGINGFACE_TOKEN=your_token_here
+Copy the example configuration from:
+
+```
+.env.example
 ```
 
-⚠️ Never upload your `.env` file to GitHub.
+and add your own API keys:
 
+```env
+CohereAPIKey=your_cohere_api_key_here
+
+Username=Your_Name
+
+Assistantname=jarvis
+
+GroqAPIKey=your_groq_api_key_here
+
+InputLanguage=en
+
+AssistantVoice=en-US-AriaNeural
+
+
+# HuggingFace API
+
+HuggingFaceAPIKey=your_huggingface_token_here
+
+
+# Weather API
+
+WeatherAPIKey=your_openweathermap_key_here
+
+WeatherCity=Your_City
+
+
+# Conversation Settings
+
+ConversationMode=True
+
+HistoryWindow=20
+
+
+# SerpAPI
+
+SerpAPIKey=your_serpapi_key_here
+
+
+# News API
+
+NewsDataAPIKey=your_newsdata_key_here
+```
+
+---
+
+## Step 3: Get API Keys
+
+### Cohere API
+
+Create your key:
+
+https://dashboard.cohere.com/
+
+---
+
+### Groq API
+
+Get your API key:
+
+https://console.groq.com/
+
+---
+
+### HuggingFace Token
+
+Create token:
+
+https://huggingface.co/settings/tokens
+
+---
+
+### Weather API
+
+Get free weather API key:
+
+https://openweathermap.org/api
+
+---
+
+### SerpAPI
+
+Create search API key:
+
+https://serpapi.com/
+
+---
+
+### NewsData API
+
+Create news API key:
+
+https://newsdata.io/
+
+---
+
+## ⚠️ Security Warning
+
+Keep all API keys private and regenerate them if they are accidentally exposed.
 Keep your API keys private.
 
 ---
